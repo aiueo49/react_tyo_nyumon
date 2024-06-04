@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 
 function App() {
   const [count, setCount] = useState(0);
-  const emojis = ["😀", "😃", "😄", "😁", "😆", "😅", "😂", "🤣", "😊", "😇"];
+  const emojis = ["🤔", "😐", "😶", "🙄", "🤯", "😅", "😂", "🤣", "😊", "😇"];
   const currentEmoji = emojis[count % emojis.length];
   return (
     <div className="App">
