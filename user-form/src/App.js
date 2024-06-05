@@ -1,10 +1,58 @@
 import './App.css';
+import React, { useState } from 'react';
 
 function App() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+  });
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(formData);
+  };
   return (
     <div>
       {/* フォームの各フィールド */}
+      <div className="container">
+        <h1 className="heading">ユーザーフォーム</h1>
+        <form className="form" onSubmit={handleSubmit}>
+          <div className="form-field">
+            <label className="label">名前:</label>
+            <input
+              type="text"
+              name="name"
+              value={formData.name}
+              onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+              className="input"
+            />
+          </div>
+          <div className="form-field">
+            <label className="label">メールアドレス:</label>
+            <input
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+              className="input"
+            />
+          </div>
+          <div className="form-field">
+            <label className="label">電話番号:</label>
+            <input
+              type="tel"
+              name="phone"
+              value={formData.phone}
+              onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+              className="input"
+            />
+          </div>
       {/* 送信ボタン */}
+          <button type="submit" className="button">
+            送信 
+          </button>
+        </form>
+      </div>
     </div>
  );
 }
