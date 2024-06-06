@@ -19,7 +19,7 @@ function App() {
       <div className="content">
         {/* ログイン状態に応じて表示を切り替える */}
         {isLoggedIn ? (
-          {/* ログイン状態の場合 */}
+          // ログイン状態の場合
           <div>
             <h1 className="title">ログイン済みです</h1>
             <button className="button" onClick={handleLogout}>
@@ -27,7 +27,7 @@ function App() {
             </button>
           </div>
           ) : (
-          {/* ログアウト状態の場合 */}
+          // ログアウト状態の場合
           <div>
             <h1 className="title">ログインしてください</h1>
             <button className="button" onClick={handleLogin}>
